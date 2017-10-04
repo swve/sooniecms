@@ -1,0 +1,227 @@
+
+/* Login Page */
+
+.all{
+
+  background:  linear-gradient(120deg, rgba(102, 126, 234, 0.60), rgba(118, 75, 162, 1) )   , url('bg.jpg')   ;
+  background-size: cover;
+   height: 768px;
+  font-family: 'Ubuntu', sans-serif;
+
+}
+
+.content{
+	padding-top: 200px;
+	text-align: center;
+}
+.content img{
+	height:  70px;
+}
+
+.login_block{
+	padding-top: 20px;
+	margin: auto;
+}
+input[type=submit] {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: bold;
+    padding:20px;
+    padding-left: 110px;
+    padding-right: 110px;
+    color: white;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    box-shadow: -3px 17px 32px -2px rgba(0,0,0,0.1);
+
+}
+
+
+
+input[type=text] {
+	font-family: 'Ubuntu', sans-serif;
+    padding:30px;
+    border:none;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    box-shadow: -3px 17px 32px -2px rgba(0,0,0,0.1);
+}
+input[type=password] {
+	font-family: 'Ubuntu', sans-serif;
+    padding:30px;
+    border:none;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    box-shadow: -3px 17px 32px -2px rgba(0,0,0,0.1);
+}
+
+.popup{
+  z-index: 500;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  text-align: center;
+  width: 100%;
+  background-color: rgba(233, 30, 30, 0.69);
+  color: white;
+  position: absolute;
+  
+
+
+}
+
+/*    Panel    */
+
+.bar{
+    z-index: 1;
+    background-color: #292b2c;
+    height: -webkit-fill-available;
+    padding-left: 30px;
+    box-shadow: 0 1px 50px 19px rgba(0,0,0,0.05);/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+}
+
+.bar img{
+    height: 30px;
+    margin: auto;
+    margin-top: 50px;
+
+}
+.links{
+    margin-top: 60px;
+    display: flex;
+
+    flex-direction: column;
+}
+.bar a{
+    margin-top: 10px;
+    text-transform: uppercase;
+    margin-left: 30px;
+    display: block;
+    font-family: 'Ubuntu';
+    font-weight: bold;
+    color: white;
+    text-shadow: -1px 12px 50px rgba(0,0,0,0.1);/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+
+
+}
+.bar i{
+    margin-right: 10px;
+}
+.bar a:hover{
+text-decoration: none;
+}
+.container-fluid{
+    padding-left: 0px;
+    z-index: 0;
+}
+.adm_all{
+
+background: url('../img/bg_adm.png');
+background-color: #f3f4f6;
+
+}
+.dash_w{
+    font-family: 'Ubuntu';
+    padding-top: 45px;
+    padding-left: 80px;
+
+}
+.dash_w h1{
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #595959;
+    text-shadow: -1px 12px 50px rgba(0,0,0,0.05);/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+}
+.dash_visitors_today{
+    background-color: white;
+    padding: 140px;
+    margin-right: 20px;
+    box-shadow: 0 21px 50px 1px rgba(0,0,0,0.05);
+}
+
+.dash_visitors_month{
+    background-color: white;
+    padding: 140px;
+    box-shadow: 0 21px 50px 1px rgba(0,0,0,0.05);
+}
+.dsh{
+    padding-top: 40px;
+    padding-left: 20px;
+}
+.dash_appearance{
+    background-color: white;
+    padding-top: 20px;
+    padding-left: 20px;
+    box-shadow: 0 21px 50px 1px rgba(0,0,0,0.05);
+}
+
+h2{
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #74787c;
+}
+
+
+
+.adm_inputs input[type="text"]{
+    padding: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+.adm_inputs input[type="submit"]{
+    padding: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.adm_gradients_opacity{
+
+ margin-top: 40px;
+
+}
+
+.adm_gradients_opacity input[type="range"]{
+
+    margin-top: 20px;
+
+}
+
+.adm_backgrounds{
+    margin-top: 40px;
+}
+
+.adm_backgrounds input[type="file"]{
+
+    margin-top: 20px;
+
+}
+
+.adm_submit{
+    margin-top: 40px;
+}
+
+ .adm_second_text , .adm_copy_text{
+    margin-top: 40px;
+
+}
+.dash_emails{
+    padding: 40px;
+    background-color: white;
+    box-shadow: 0 21px 50px 1px rgba(0,0,0,0.05);
+}
+.dash_emails a:hover{
+    text-decoration: none;
+
+
+}
+.copy{
+    margin: auto;
+    font-family: 'Ubuntu';
+    font-size: 11px;
+    font-weight: bold;
+    margin-top: 300px;
+    color: white;
+
+}
