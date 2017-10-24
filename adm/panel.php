@@ -19,17 +19,16 @@ if ($_COOKIE['status']=="connected") {
 
 
 
-
 <div class="adm_all">
 <div class="container-fluid">
 
-    <!-- Nav Bar -->
+
 	<?php
 	     include '../includes/access.php';
        include '../includes/left-menu.php';
 	?>
 
-    <!-- End Nav Bar -->
+
 
 
     <!--  Content -->

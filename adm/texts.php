@@ -22,6 +22,8 @@
   <?php
 	     include '../includes/access.php';
        include '../includes/left-menu.php';
+			 include '../includes/adm/texts.php';
+			 include '../connect/connect.php';
   ?>
 
     <!-- End Nav Bar -->
@@ -34,11 +36,11 @@
    	</h1>
    	<div class="row dsh">
    	<div class="dash_appearanc">
-<form method="POST" class="adm_inputs" action="go.php">
+<form method="POST" class="adm_inputs" action="texts.php">
    		<div class="adm_first_text">
    		<h2>Home first text</h2>
 
-   			<input   type="text" name="" placeholder="First Text">
+   			<input   type="text" name="first_text" placeholder="First Text">
 
 
    		</div>
@@ -46,19 +48,19 @@
    		<div class="adm_second_text">
    		<h2>Home second text </h2>
 
-   			<input   type="text" name="" placeholder="Second Text">
+   			<input   type="text" name="second_text" placeholder="Second Text">
 
    		</div>
 
    		<div class="adm_copy_text">
    		<h2>Copyright text</h2>
 
-   			<input   type="text" name="" placeholder="Copyright Text">
+   			<input   type="text" name="copy_text" placeholder="Copyright Text">
 
    		</div>
 
 		<div class="adm_submit">
-   		<p><input type="submit" name="" value="Submit"></p>
+   		<p><input type="submit" name="submit" value="Submit"></p>
 		</div>
 </form>
 

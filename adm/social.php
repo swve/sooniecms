@@ -8,6 +8,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500i,700" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/animate.css">
+
 </head>
 <body>
 
@@ -18,13 +19,13 @@
 <div class="adm_all">
 <div class="container-fluid">
 
-    <!-- Nav Bar -->
+
   <?php
-	     include '../includes/access.php';
+	  include '../includes/access.php';
        include '../includes/left-menu.php';
   ?>
 
-    <!-- End Nav Bar -->
+
 
 
     <!--  Content -->

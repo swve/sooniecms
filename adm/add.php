@@ -17,7 +17,7 @@
         <div class="container-fluid">
 
             <!-- Nav Bar -->
-  <?php 
+            <?php 
        include '../connect/connect.php';
        include '../includes/left-menu.php';
        

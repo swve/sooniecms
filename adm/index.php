@@ -6,7 +6,7 @@ setcookie('status', 'disconnected', time() + 365*24*3600, null, null, false, tru
 <head>
 	<title>SoonieCMS Administration</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../adm/css/app.css">
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500i,700" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -66,6 +66,8 @@ if (isset($_POST['login'])) {
 	else {
 
 ?>
+
+
 
 <div class="popup animated slideInDown">
 	<p><i class="fa fa-unlock-alt" aria-hidden="true"></i>&nbsp; Your username and password are missing , please try again  </p>
