@@ -3,7 +3,7 @@
 <head>
 	<title>SoonieCMS : Appearance</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../adm/css/app.css">
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500i,700" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -60,7 +60,7 @@
    		</div>
 
 		<div class="adm_submit">
-   		<p><input type="submit" name="submit" value="Submit"></p>
+   		<p><input type="submit"  value="Submit"></p>
 		</div>
 </form>
 
@@ -84,13 +84,32 @@
 
 
 </div>
+        <?php
+        include '../connect/connect.php';
 
-<?php
-}
-else {
-	header('Location: index.php?connected=false');
-}
-?>
+        $req = $bdd->prepare('UPDATE soonie_texts SET first_text = :first_text, second_text = :second_text , third_text = :copy_text  WHERE id = :id');
+        $req->execute(array(
+            'first_text' => $_POST['first_text'],
+            'second_text' => $_POST['second_text'],
+            'copy_text' => $_POST['copy_text'],
+            'id'=> '1'
+
+        ));
+
+
+        ?>
+
+
+
+
+
+
+        <?php
+        }
+        else {
+            header('Location: index.php?connected=false');
+        }
+        ?>
 
 </body>
 </html>
