@@ -4,7 +4,7 @@ A simple and customizable CMS for you coming projects
 The CMS is in Beta Version , this version can contain bugs 
 
 Configuration : 
-Modify /connect/connect.php file :
+Modify "/connect/connect.php" file :
 
 Database configuration :
 
