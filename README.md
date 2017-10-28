@@ -1,12 +1,12 @@
 # SoonieCMS
 A simple and customizable CMS for you coming projects
 
-The CMS is in Beta 
+The CMS is in Beta Version , this version can contain bugs 
 
 Configuration : 
 Modify /connect/connect.php file :
 
-// Database configuration 
+Database configuration :
 
 	$host = "localhost";
 	$user = "root";
@@ -14,7 +14,7 @@ Modify /connect/connect.php file :
 	$db_name = "sooniecms_db";
 	$site_address="http://localhost/sn";
 
-//Administration panel user and password
+Administration panel user and password :
 
 
      define('user', 'swv');
