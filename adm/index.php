@@ -19,6 +19,7 @@ setcookie('status', 'disconnected', time() + 365*24*3600, null, null, false, tru
 <?php
 
 			include '../includes/access.php';
+            include '../connect/connect.php';
 
 
  ?>

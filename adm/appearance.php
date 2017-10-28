@@ -12,7 +12,7 @@
 <body>
 
 	<?php
-	if ($_COOKIE['status']=="connected") {
+	if (htmlspecialchars($_COOKIE['status']=="connected")) {
 		?>
 
 <div class="adm_all">
@@ -35,7 +35,7 @@
    	<div class="row dsh">
    	<div class="dash_appearanc">
 
-   		<form method="POST" class="adm_inputs" action="appearance.php">
+   		<form method="POST" class="adm_inputs" action="appearance.php" enctype="multipart/form-data">
 
    		<div class="adm_gradients">
    		<h2>Gradient Colors</h2>
@@ -70,7 +70,7 @@
 
 
 		<div class="adm_submit">
-   		<p><input type="submit" name="" value="Submit"></p>
+   		<p><input type="submit" name="submit" value="Submit"></p>
 		</div>
 
 </form>
@@ -96,18 +96,65 @@
 </div>
 
         <?php
+        //$max_filesize = 9000000;
+        //$filesize = filesize($_FILES['bg_img']['tmp_name']);
+        //$extensions = array('.png', '.gif', '.jpg', '.jpeg');
+        //$extension = strrchr($_FILES['avatar']['name'], '.');
+        //if(!in_array($extension, $extensions)) //Si l'extension n'est pas dans le tableau
+        //{
+            //$erreur = 'Allowed file extensions .png .gif . jpg .jpeg';
+        //}
+        //if($taille>$taille_maxi)
+        //{
+            //$erreur = '8 mo max size';
+        //}
+
+        if(isset($_FILES['logo_img']))
+        {
+            $folder = '../upload/';
+            $file1= basename($_FILES['logo_img']['name']);
+            if(move_uploaded_file($_FILES['logo_img']['tmp_name'], $folder . $file1))
+            {
+                echo 'Upload Success!! !';
+            }
+            else
+            {
+                echo 'Upload Fail..';
+            }
+        }
+        if(isset($_FILES['bg_img']))
+        {
+            $folder = '../upload/';
+            $file2= basename($_FILES['bg_img']['name']);
+            if(move_uploaded_file($_FILES['bg_img']['tmp_name'], $folder . $file2))
+            {
+                echo 'Upload effectué avec succès !';
+            }
+            else
+            {
+                echo 'Echec de l\'upload !';
+            }
+        }
+        ?>
+
+        <?php
         include '../connect/connect.php';
 
-            $req = $bdd->prepare('UPDATE soonie_appearance SET gradient_color1 = :gradient_color1, gradient_color2 = :gradient_color2 , logo_img = :logo_img , gradient_opacity = :gradient_opacity , bg_img = :bg_img WHERE id = :id');
-            $req->execute(array(
-                'gradient_color1' => $_POST['gradient_color1'],
-                'gradient_color2' => $_POST['gradient_color2'],
-                'logo_img' => $_POST['logo_img'],
-                'gradient_opacity' => $_POST['gradient_opacity'],
-                'bg_img' => $_POST['bg_img'],
-                'id'=> '1'
+            if (isset($_POST['submit'])){
+                $req = $bdd->prepare('UPDATE soonie_appearance SET gradient_color1 = :gradient_color1, gradient_color2 = :gradient_color2 , logo_img = :logo_img , gradient_opacity = :gradient_opacity , bg_img = :bg_img WHERE id = :id');
+                $req->execute(array(
+                    'gradient_color1' => htmlspecialchars($_POST['gradient_color1']),
+                    'gradient_color2' => htmlspecialchars($_POST['gradient_color2']),
+                    'logo_img' => $site_address . "/upload/" . $file1,
+                    'gradient_opacity' => htmlspecialchars($_POST['gradient_opacity']),
+                    'bg_img' => $site_address . "/upload/" . $file2,
+                    'id'=> '1'
 
-            ));
+                ));
+            }
+            else{
+
+            }
 
 
         ?>

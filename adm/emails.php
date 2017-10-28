@@ -12,7 +12,7 @@
 <body>
 
   <?php
-  if ($_COOKIE['status']=="connected") {
+  if (htmlspecialchars($_COOKIE['status']=="connected")) {
   	?>
 
 <div class="adm_all">
@@ -20,6 +20,7 @@
 
     <!-- Nav Bar -->
   <?php
+       include '../connect/connect.php';
        include '../includes/access.php';
        include '../includes/left-menu.php';
   ?>
@@ -33,8 +34,19 @@
     <h1>Soonie : Saved Emails</h1>
     <div class="row dsh">
     <div class="dash_emails">
-    <h2>Emails List</h2>
-    <h3><a href="/emails/emails.txt"><i class="fa fa-cloud-download" aria-hidden="true"></i> Download emails list</a></h3>
+    <h2>Mail List</h2>
+
+    <?php
+    $req = $bdd->query('SELECT * FROM soonie_emails');
+    while($data= $req->fetch()){
+    echo $data['email'];
+    echo "<br>";
+    }
+
+
+    ?>
+
+
    </div>
 
    </div>

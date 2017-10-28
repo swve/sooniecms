@@ -13,7 +13,7 @@
 <body>
 
 	<?php
-	if ($_COOKIE['status']=="connected") {
+	if (htmlspecialchars($_COOKIE['status']=="connected")) {
 		?>
 
 <div class="adm_all">
@@ -94,15 +94,17 @@
         <?php
         include '../connect/connect.php';
 
-        $req = $bdd->prepare('UPDATE soonie_social SET fb_link = :fb_link, tw_link = :tw_link ,  ln_link = :ln_link   WHERE id = :id');
-        $req->execute(array(
-            'fb_link' => $_POST['fb_link'],
-            'tw_link' => $_POST['tw_link'],
-            'ln_link' => $_POST['ln_link'],
-            'id'=> '1'
+        if (isset($_POST['submit'])){
+            $req = $bdd->prepare('UPDATE soonie_social SET fb_link = :fb_link, tw_link = :tw_link ,  ln_link = :ln_link   WHERE id = :id');
+            $req->execute(array(
+                'fb_link' => htmlspecialchars($_POST['fb_link']),
+                'tw_link' => htmlspecialchars($_POST['tw_link']),
+                'ln_link' => htmlspecialchars($_POST['ln_link']),
+                'id'=> '1'
 
-        ));
+            ));
 
+        }
 
         ?>
 

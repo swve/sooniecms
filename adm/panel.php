@@ -12,7 +12,7 @@
 <body>
 
 <?php
-if ($_COOKIE['status']=="connected") {
+if (htmlspecialchars($_COOKIE['status'])=="connected") {
 	?>
 
 
@@ -37,13 +37,23 @@ if ($_COOKIE['status']=="connected") {
    	<h1>Welcome to soonie dashboard</h1>
    	<div class="row dsh">
    	<div class="dash_visitors_today">
-   	<h2>TODAY</h2>
-   	<h3>4656 Visitors</h3>
+   	<h2>Your page visitors from the first day</h2>
+   	<h3><?php
+
+
+        $datei = fopen("visitors.txt","r");
+        $count = fgets($datei,1000);
+        fclose($datei);
+
+        echo "$count" ;
+        echo " hits" ;
+        echo "\n" ;
+
+
+
+        ?> Visitors</h3>
    </div>
-   <div class="dash_visitors_month">
-   	<h2>THIS MONTH</h2>
-   	<h3>2K Visitors</h3>
-   </div>
+
    </div>
    </div>
 

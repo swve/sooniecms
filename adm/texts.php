@@ -12,7 +12,7 @@
 <body>
 
 	<?php
-	if ($_COOKIE['status']=="connected") {
+	if (htmlspecialchars($_COOKIE['status']=="connected")) {
 		?>
 
 <div class="adm_all">
@@ -20,9 +20,9 @@
 
     <!-- Nav Bar -->
   <?php
-	     include '../includes/access.php';
+
        include '../includes/left-menu.php';
-			 include '../includes/adm/texts.php';
+
 			 include '../connect/connect.php';
   ?>
 
@@ -85,17 +85,21 @@
 
 </div>
         <?php
-        include '../connect/connect.php';
 
-        $req = $bdd->prepare('UPDATE soonie_texts SET first_text = :first_text, second_text = :second_text , third_text = :copy_text  WHERE id = :id');
-        $req->execute(array(
-            'first_text' => $_POST['first_text'],
-            'second_text' => $_POST['second_text'],
-            'copy_text' => $_POST['copy_text'],
-            'id'=> '1'
 
-        ));
+        if (isset($_POST['first_text']) AND isset($_POST['second_text']) AND isset($_POST['copy_text']) ){
+            $req = $bdd->prepare('UPDATE soonie_texts SET first_text = :first_text, second_text = :second_text , third_text = :copy_text  WHERE id = :id');
+            $req->execute(array(
+                'first_text' => htmlspecialchars($_POST['first_text']),
+                'second_text' => htmlspecialchars($_POST['second_text']),
+                'copy_text' => htmlspecialchars($_POST['copy_text']),
+                'id'=> '1'
 
+            ));
+        }
+        else{
+
+        }
 
         ?>
 
