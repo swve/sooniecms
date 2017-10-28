@@ -15,8 +15,8 @@ Modify /connect/connect.php file :
 	$site_address="http://localhost/sn";
 
 //Administration panel user and password
-
+<?php
   define('user', 'swv');
   define('pass', '123');
-
+?>
 Thanks,
