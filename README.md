@@ -7,6 +7,11 @@ A simple and customizable CMS for you coming projects
 
 The CMS is in Beta Version , this version can contain bugs 
 
+Known bugs:
+      
+        1/ You should complete all the fields in the administration panel before submitting 
+	2/ Images with big sizes don't want to upload 
+
 Administration panel:
          
 	[yoururl.com]/adm
